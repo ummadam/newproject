@@ -11,6 +11,7 @@ import store from './store'
 import setAuthToken from './utils/setAuthToken';
 import jwt_decode from 'jwt-decode'
 import {setCurrentUser,logoutUser} from './actions/authActions'
+import Dashboard from "./components/dashboard";
 
 
 if(localStorage.jwtToken){
@@ -33,6 +34,7 @@ class App extends Component {
               <Route exact path={'/'} component={()=><Main/>}/>
               <Route exact path={'/login'} component={WrappedNormalLoginForm}/>
               <Route exact path={'/registration'} component={WrappedNormalRegistrationForm}/>
+              <Route  path={'/dashboard'} component={Dashboard}/>
             </Switch>    
           </Router>
           
